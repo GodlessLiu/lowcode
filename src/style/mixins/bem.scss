@@ -1,0 +1,25 @@
+@use './config' as *;
+
+@mixin b($block) {
+    .#{$namespace+$block-separater+$block} {
+        @content;
+    }
+}
+
+@mixin e($el) {
+    $context: &;
+    @at-root {
+        #{$context+$element-separater+$el} {
+            @content;
+        }
+    }
+
+}
+@mixin m($mod) {
+    $context: &;
+    @at-root {
+        #{$context+$modify-separater+$mod} {
+            @content;
+        }
+    }
+}
